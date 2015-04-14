@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6b56687a-c9e0-499d-a46d-89aa7df19813}</ProjectGuid>
+    <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
+    <Name>Eisk.Architecture</Name>
+    <RootNamespace>Eisk.Architecture</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
+  <ItemGroup>
+    <Content Include="Sequence Diagram\EmployeeBLL_CreateNewEmployee.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequence Diagram\EmployeeBLL_CreateNewEmployee.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequence Diagram\EmployeeBLL_CreateNewEmployee.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequence Diagram\EmployeeBLL_GetEmployeeByEmployeeId.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequence Diagram\EmployeeBLL_GetEmployeeByEmployeeId.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequence Diagram\EmployeeBLL_GetEmployeeByEmployeeId.sequencediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\Eisk.Architecture.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="Layer Diagram" />
+    <Folder Include="Dependency Graphs" />
+    <Folder Include="Sequence Diagram" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eisk.Tests.IntegrationTests.CodedUiTests\Eisk.Tests.IntegrationTests.CodedUiTests.csproj">
+      <Name>Eisk.Tests.IntegrationTests.CodedUiTests</Name>
+      <Project>{5c22242e-c0ab-418e-88a5-aec217c42329}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Eisk.Tests.IntegrationTests.ConfigurationTests\Eisk.Tests.IntegrationTests.ConfigurationTests.csproj">
+      <Name>Eisk.Tests.IntegrationTests.ConfigurationTests</Name>
+      <Project>{d402f5fa-5777-4fb6-b7a1-97e7e8b43008}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Eisk.Tests.IntegrationTests.DataAccessTests\Eisk.Tests.IntegrationTests.DataAccessTests.csproj">
+      <Name>Eisk.Tests.IntegrationTests.DataAccessTests</Name>
+      <Project>{bbf7d722-8d15-47dc-9ac4-77e84ef04dff}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Eisk.Tests.IntegrationTests.DatabaseUnitTests\Eisk.Tests.IntegrationTests.DatabaseUnitTests.csproj">
+      <Name>Eisk.Tests.IntegrationTests.DatabaseUnitTests</Name>
+      <Project>{6032369a-3a3b-4cae-9cf3-9b096b7e0326}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Eisk.Tests.UnitTests.MockTests\Eisk.Tests.UnitTests.MockTests.csproj">
+      <Name>Eisk.Tests.UnitTests.MockTests</Name>
+      <Project>{9d4f05f5-cd6b-4eaf-8b1b-2b4495d65025}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Eisk.Tests.UnitTests\Eisk.Tests.UnitTests.csproj">
+      <Name>Eisk.Tests.UnitTests</Name>
+      <Project>{5913d55a-2cd1-4d4d-b026-5bcf8c6421e2}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="Layer Diagram\Logical Layers.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Layer Diagram\Logical Layers.LayerConstraints.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Layer Diagram\Logical Layers.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Layer Diagram\Logical Layers.LayerConstraints.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Layer Diagram\Logical Layers.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

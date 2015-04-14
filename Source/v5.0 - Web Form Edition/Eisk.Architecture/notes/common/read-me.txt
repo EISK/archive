@@ -1,0 +1,173 @@
+========================================================================================================================
+Employee Info Starter Kit
+========================================================================================================================
+Language: C#
+Version 1.2 (IN PORGRESS)
+
+Designed and coded by: Mohammad Ashraful Alam [joy_csharp@hotmail.com]
+Microsoft MVP 2007 ASP.NET
+Blog: http://geekswithblogs.net/joycsharp
+
+===============================================
+User Interface :-
+===============================================
+
+- Design template (MS SIMPLE)
+- Asp.net 2.0 theme and skin 
+- Asp.net 2.0 formview, gridview and object data source 
+- Asp.net 2.0 nested master page (with utility class)
+- Client side calender control
+- Grid view client side select all feature
+- Grid view delete confirmation feature
+- Form view data pre-fill feature
+- Databound dropdown with 'All'/'None' selector field
+- Print page
+- Context parameter based listing/details page
+- Client end validations
+- Content upload in SQL Server
+
+===============================================
+Utility Class :-
+===============================================
+
+- Error reporting
+- Friedly error page
+- Email functionality
+- Html formatter
+- Login utility
+- File upload utility
+- Role based (cache based) security
+- Session expire base page
+- Session manager
+- Keys
+- Enumeration
+
+===============================================
+Cache Layer (Entity Level) :-
+===============================================
+
+CRUD Methods :-
+
+- public static CustomCollection<Employee> GetAllEmployee()
+- public static Employee GetEmployeeByEmployeeId(SqlInt32 employeeId)
+- public static int CreateNewEmployee(String country, string firstName)
+- public static bool UpdateEmployee(SqlInt32 employeeId, String country, string firstName)
+
+Utility Methods :-
+
+- private static string GetCacheKey(string rawKey)
+- private static object GetCacheItem(string rawKey)
+- private static void AddCacheItem(string rawKey, object value)
+- private static void InvalidateCache()
+
+===============================================
+Command Wrapper (Custom Query) :-
+===============================================
+
+- ScalarValue
+- CustomEntitySingleRecord
+- CustomEntityTabular
+- CustomEntityTabularCollection
+- GenericDataTable
+- GenericDataSet
+- WriteReturnSuccess
+- WriteReturnPrimaryKey
+
+Stored Procedures :-
+
+	- Custom_Employee_GetAllEmployeeBosses
+	- Custom_Employee_GetEmployeeBossByEmployeeId
+	- Custom_Employee_GetEmployeeFirstNameByEmployeeId
+	- Custom_Employee_GetTwoLevelBosses        
+
+===============================================
+Data Access Layer (Entity Level) :-
+===============================================
+
+- System.Data.SqlTypes for data property fields
+- Create and Update Method with primitive type paramaters for Object Data Source Support
+- Design time support for Object Data Source
+- Works for only auto-generated primary key
+- .Net 2.0 Generic Collection Support
+- Isolation for Stored Procedure Name Constants
+- XML Comments (useful for nDoc utility)
+- Validation for method parameters
+- Null values can be saved to database as NULL. Howerver additional codes needs to be written to UI layer for showing null values as 'empty', other wise it places 'NULL' text in the data field UI. 
+
+Database Utility Methods :-
+	
+	* Generate collection for reader delegate
+	* Add parameter to sql command method
+	* Execute scalar command method
+	* Execute reader method
+	* Format xml for id array method
+
+CRUD Methods :-
+	
+	CREATE METHODS
+	* public int CreateNewEmployee(Employee newEmployee)
+	* public static int CreateNewEmployee(string country, string firstName, int reportsTo, string title, string titleOfCourtesy, string birthDate, string hireDate, string address, string city, string region, string postalCode, string notes, string homePhone, string extension, byte[] img)
+		Comment: for UI end support we have used primitive type rahter System.Data.SqlTypes
+	
+	UPDATE METHODS
+	* public bool UpdateEmployee(Employee updatedEmployee)
+	* public static bool UpdateEmployee(SqlInt32 employeeId, string country, string firstName, int reportsTo, string title, string titleOfCourtesy, string birthDate, string hireDate, string address, string city, string region, string postalCode, string notes, string homePhone, string extension, byte[] img)
+		Comment: for UI end support we have used primitive type rahter System.Data.SqlTypes.
+		However we have used System.Data.SqlTypes only for the primary key for the same reason.
+		
+	SAVE METHOD (INSTANCE)
+	* public bool Save()
+	
+	GET BY PRIMARY KEY
+	* public static Employee GetEmployeeByEmployeeId(SqlInt32 employeeId)
+	
+	GET BY FOREIGN KEY
+	* public static CustomCollection<Employee> GetEmployeeByReportsTo(Int32 reportsTo)
+		Comment: for UI end support we have used primitive type rahter System.Data.SqlTypes
+	
+	GET BY FOREIGN KEY - PAGED
+	* public static CustomCollection<Employee> GetEmployeeByReportsToPaged(Int32 reportsTo, String orderBy, Int32 startRowIndex, Int32 maximumRows)
+	* public static int GetEmployeeByReportsToPagedCount(Int32 reportsTo, String orderBy, Int32 startRowIndex, Int32 maximumRows)
+		Comment: for UI end support we have used primitive type rahter System.Data.SqlTypes
+	
+	GET ALL
+	* public static CustomCollection<Employee> GetAllEmployee()     
+	
+	GET ALL PAGED (USING SQL SERVER 2005 PAGING SUPPORT)
+	* public static CustomCollection<Employee> GetAllEmployeePaged(String orderBy, Int32 startRowIndex, Int32 maximumRows)
+	* public static int GetAllEmployeePagedCount(String orderBy, Int32 startRowIndex, Int32 maximumRows)
+	
+	DELETE BY ID
+	* public static bool DeleteEmployee(SqlInt32 employeeId)
+	
+	BATCH DELETE (USING SQL SERVER 2005 XML TYPE)
+	* public static bool DeleteEmployee(SqlInt32 employeeId)
+
+Stored Procedures :-
+
+		// -- create method related constants -- //
+        internal const string SP_EMPLOYEE_CREATE = "Employees_CreateNewEmployee";
+
+        // -- update method related constants -- //
+        internal const string SP_EMPLOYEE_UPDATE = "Employees_UpdateEmployee";
+        
+        // -- delete method related constants -- //
+        internal const string SP_EMPLOYEE_DELETE = "Employees_DeleteEmployee";
+        internal const string SP_EMPLOYEE_DELETE_LIST = "Employees_DeleteEmployeeList";
+
+        //-- get method related constants -- //
+
+        //get by primary key  stored procedure
+        internal const string SP_GETEMPLOYEE_BY_EMPLOYEEID = "Employees_GetEmployeeByEmployeeId";
+
+        //get by foreign key stored procedures
+        internal const string SP_GETEMPLOYEE_BY_REPORTSTO = "Employees_GetEmployeesByReportsTo";
+        internal const string SP_GETEMPLOYEE_BY_REPORTSTO_PAGED = "Employees_GetEmployeesByReportsTo_Paged";
+        internal const string SP_GETEMPLOYEE_BY_REPORTSTO_PAGED_COUNT = "Employees_GetEmployeesByReportsTo_Paged_Count";
+
+        //'get all'  stored procedures
+        internal const string SP_GETALLEMPLOYEE = "Employees_GetAllEmployees";
+        internal const string SP_GETALLEMPLOYEE_PAGED = "Employees_GetAllEmployees_Paged";
+        internal const string SP_GETALLEMPLOYEE_PAGED_COUNT = "Employees_GetAllEmployees_Paged_Count";
+	
+========================================================================================================================

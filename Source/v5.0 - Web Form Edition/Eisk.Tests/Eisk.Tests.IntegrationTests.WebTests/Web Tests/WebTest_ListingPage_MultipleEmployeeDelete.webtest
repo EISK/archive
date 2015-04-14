@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest_ListingPage_MultipleEmployeeDelete" Id="6f55930c-3c58-443e-9b68-77d295de4129" Owner="" Priority="0" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" DeploymentItemsEditable="\App_Data\WebTestSettings.xml" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="" StopOnError="False" RecordedResultFile="">
+  <Items>
+    <Request Method="GET" Version="1.1" Url="{{dsWebLink.Links.EmployeeListingPage}}" ThinkTime="10" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.search" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="search" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.ctl00$ContentPlaceholder1$buttonDeleteSelected" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_buttonDeleteSelected" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Version="1.1" Url="{{dsWebLink.Links.EmployeeListingPage}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="">
+      <ValidationRules>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="has been deleted" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="True" />
+          </RuleParameters>
+        </ValidationRule>
+      </ValidationRules>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__EVENTTARGET" Value="{{$HIDDEN1.__EVENTTARGET}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTARGUMENT" Value="{{$HIDDEN1.__EVENTARGUMENT}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATE" Value="{{$HIDDEN1.__VIEWSTATE}}" RecordedValue="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" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATEENCRYPTED" Value="{{$HIDDEN1.__VIEWSTATEENCRYPTED}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="search" Value="enter search phrase" RecordedValue="enter search phrase" CorrelationBinding="{{FormPostParam1.search}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$dropDownListEmployee" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$gridViewEmployees$ctl03$chkEmployeeSelector" Value="on" RecordedValue="on" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$gridViewEmployees$ctl04$chkEmployeeSelector" Value="on" RecordedValue="on" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$buttonDeleteSelected" Value="Delete Selected" RecordedValue="Delete Selected" CorrelationBinding="{{FormPostParam2.ctl00$ContentPlaceholder1$buttonDeleteSelected}}" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+  </Items>
+  <DataSources>
+    <DataSource Name="dsWebLink" Provider="Microsoft.VisualStudio.TestTools.DataSource.XML" Connection="|DataDirectory|\..\App_Data\WebTestSettings.xml">
+      <Tables>
+        <DataSourceTable Name="Links" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+  </DataSources>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+  </ValidationRules>
+  <WebTestPlugins>
+    <WebTestPlugin Classname="Eisk.TestHelpers.DefaultWebTestPlugin, Eisk.TestHelpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DisplayName="DefaultWebTestPlugin" Description="" />
+  </WebTestPlugins>
+</WebTest>

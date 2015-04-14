@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FD80AD0-BFFA-469C-B168-8B51787883F9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Eisk.MVC7</RootNamespace>
+    <AssemblyName>Eisk.MVC7</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Eisk.Solution\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.0.1\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Initializers\Config\BundleConfig.cs" />
+    <Compile Include="Initializers\Bootstrap\DependencyInjectorInitializer.cs" />
+    <Compile Include="Initializers\Bootstrap\DisplayModelInitializer.cs" />
+    <Compile Include="Initializers\Config\FilterConfig.cs" />
+    <Compile Include="Initializers\Config\RouteConfig.cs" />
+    <Compile Include="Initializers\Bootstrap\Data Loader\DataInitializer.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SecurityDemoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Cross Cutting Concerns\ExceptionDude.cs" />
+    <Compile Include="Helpers\Cross Cutting Concerns\Logger.cs" />
+    <Compile Include="Helpers\Dependency Injection\DependencyHelper.cs" />
+    <Compile Include="Helpers\Dependency Injection\HttpContextPerRequestStore.cs" />
+    <Compile Include="Helpers\Dependency Injection\IPerRequestStore.cs" />
+    <Compile Include="Helpers\Dependency Injection\Unity\UnityContainerFactory.cs" />
+    <Compile Include="Helpers\Dependency Injection\Unity\UnityDependencyResolver.cs" />
+    <Compile Include="Helpers\Dependency Injection\Unity\UnityHttpContextPerRequestLifetimeManager.cs" />
+    <Compile Include="Helpers\Dependency Injection\Unity\UnityPerRequestLifetimeManager.cs" />
+    <Compile Include="Helpers\ObjectHelper.cs" />
+    <Compile Include="Helpers\Html Helpers\HtmlConverter.cs" />
+    <Compile Include="Helpers\Controller Helpers\ControllerHelper.cs" />
+    <Compile Include="Helpers\Controller Helpers\ControllerExtensions.cs" />
+    <Compile Include="Helpers\Html Helpers\HtmlHelperExtensions.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Helpers\CountryList.cs" />
+    <Compile Include="Initializers\Bootstrap\Data Loader\DatabaseContextInitializer.cs" />
+    <Compile Include="Helpers\Enums.cs" />
+    <Compile Include="Helpers\Validation\DateGreaterThanAttribute.cs" />
+    <Compile Include="Helpers\Validation\RequiredIfAttribute.cs" />
+    <Compile Include="Helpers\XElementExtensions.cs" />
+    <Compile Include="Business Rules\EmployeeAddressMustBeUnique.cs" />
+    <Compile Include="Data Mapper\DatabaseContext.Hack.cs" />
+    <Compile Include="Data Mapper\DatabaseContext.cs" />
+    <Compile Include="Initializers\Bootstrap\Data Loader\TestDataHelper.cs" />
+    <Compile Include="Models\Base Entities\Person.cs" />
+    <Compile Include="Models\Employee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Employee.Validation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Values Objects\Address.cs" />
+    <Compile Include="Models\Model Sets\LookUpModelSet.cs" />
+    <Compile Include="Helpers\GridViewModel.cs" />
+    <Compile Include="Models\View Models\EmployeeEditorModel.cs" />
+    <Compile Include="Models\View Models\EmployeeViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Business Rules\SupervisorCountryMustBeSame.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\TestData.xml" />
+    <Content Include="Content\themes\default\960.css" />
+    <Content Include="Content\themes\default\fonts\ColabBol-webfont.svg" />
+    <Content Include="Content\themes\default\fonts\ColabLig-webfont.svg" />
+    <Content Include="Content\themes\default\fonts\ColabMed-webfont.svg" />
+    <Content Include="Content\themes\default\fonts\ColabReg-webfont.svg" />
+    <Content Include="Content\themes\default\fonts\ColabThi-webfont.svg" />
+    <Content Include="Content\themes\default\images\ico_arrow_down.png" />
+    <Content Include="Content\themes\default\images\ico_arrow_up.png" />
+    <Content Include="Content\themes\default\images\ico-data-delete.png" />
+    <Content Include="Content\themes\default\images\grid-bg.png" />
+    <Content Include="Content\themes\default\mobile\jquery.mobile\images\ajax-loader.png" />
+    <Content Include="Content\themes\default\mobile\jquery.mobile\images\icons-18-black.png" />
+    <Content Include="Content\themes\default\mobile\jquery.mobile\images\icons-18-white.png" />
+    <Content Include="Content\themes\default\mobile\jquery.mobile\images\icons-36-black.png" />
+    <Content Include="Content\themes\default\mobile\jquery.mobile\images\icons-36-white.png" />
+    <Content Include="Content\themes\default\mobile\jquery.mobile\jquery.mobile-1.0.1.min.css" />
+    <Content Include="Content\themes\default\mobile\mobile.css" />
+    <Content Include="Images\ico-refresh.png" />
+    <Content Include="Content\themes\default\images\eisk-branding.png" />
+    <Content Include="Content\themes\default\images\eisk-header-bg.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-bg_flat_55_c0402a_40x100.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-bg_flat_55_eeeeee_40x100.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-bg_glass_100_f8f8f8_1x400.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-bg_glass_35_dddddd_1x400.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-bg_glass_60_eeeeee_1x400.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-bg_inset-hard_75_999999_1x100.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-icons_3383bb_256x240.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-icons_70b2e1_256x240.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-icons_999999_256x240.png" />
+    <Content Include="Content\themes\default\overcast\images\ui-icons_fbc856_256x240.png" />
+    <Content Include="Content\themes\default\overcast\jquery-ui-1.8.18.custom.css" />
+    <Content Include="Images\ico-arrow-back.png" />
+    <Content Include="Content\themes\default\media\handheld.css" />
+    <Content Include="Content\themes\default\media\print.css" />
+    <Content Include="Content\themes\default\mobile\ext.file.css" />
+    <Content Include="Content\themes\default\mobile\smart-phone\smart-phone.css" />
+    <Content Include="Content\themes\default\mobile\tablet\ipad\ipad.css" />
+    <Content Include="Content\themes\default\mobile\tablet\tablet.css" />
+    <Content Include="Content\themes\default\images\asc.png" />
+    <Content Include="Content\themes\default\images\desc.png" />
+    <Content Include="Content\themes\default\images\ico-edit.png" />
+    <Content Include="Content\themes\default\images\ico-view.png" />
+    <Content Include="Content\themes\default\images\sort-regular.png" />
+    <Content Include="Content\themes\default\mobile\smart-phone\iphone\iphone.css" />
+    <Content Include="Content\themes\default\reset.css" />
+    <Content Include="Content\themes\default\text.css" />
+    <Content Include="Content\themes\default\layout.css" />
+    <Content Include="Content\themes\default\bread-crumb.css" />
+    <Content Include="Content\themes\default\buttons.css" />
+    <Content Include="Content\themes\default\mvc-default.css" />
+    <Content Include="Content\themes\default\forms.css" />
+    <Content Include="Content\themes\default\grids.css" />
+    <Content Include="Content\themes\default\images\blank.gif" />
+    <Content Include="Content\themes\default\images\Chevron.gif" />
+    <Content Include="Content\themes\default\images\ChevronOverlay.png" />
+    <Content Include="Content\themes\default\images\IconHome.gif" />
+    <Content Include="Content\themes\default\file.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\ico-arrow-up.png" />
+    <Content Include="Images\ico-edit.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\ico-cal.png" />
+    <Content Include="Images\ico-print.png" />
+    <Content Include="Images\ico-resultset-last.png" />
+    <Content Include="Images\ico-resultset-next.png" />
+    <Content Include="Images\ico-resultset-previous.png" />
+    <Content Include="Images\iso-resultset-first.png" />
+    <Content Include="Images\loader-life.gif" />
+    <Content Include="Images\noimage.gif" />
+    <Content Include="Scripts\eisk-ajax-loader.js" />
+    <Content Include="Scripts\eisk-required-if-validation.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-ui-1.8.18.custom.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.0.1.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\eisk-menu.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\SecurityDemo\LogOn.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SecurityDemo\Admin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SecurityDemo\Member.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SecurityDemo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_ViewSwitcher.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.Mobile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="unity.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Architecture\Namespaces.dgml" />
+    <None Include="Architecture\ViewModels.cd" />
+    <None Include="Content\themes\default\fonts\ColabBol-webfont.eot" />
+    <None Include="Content\themes\default\fonts\ColabBol-webfont.ttf" />
+    <None Include="Content\themes\default\fonts\ColabBol-webfont.woff" />
+    <None Include="Content\themes\default\fonts\ColabLig-webfont.eot" />
+    <None Include="Content\themes\default\fonts\ColabLig-webfont.ttf" />
+    <None Include="Content\themes\default\fonts\ColabLig-webfont.woff" />
+    <None Include="Content\themes\default\fonts\ColabMed-webfont.eot" />
+    <None Include="Content\themes\default\fonts\ColabMed-webfont.ttf" />
+    <None Include="Content\themes\default\fonts\ColabMed-webfont.woff" />
+    <None Include="Content\themes\default\fonts\ColabReg-webfont.eot" />
+    <None Include="Content\themes\default\fonts\ColabReg-webfont.ttf" />
+    <None Include="Content\themes\default\fonts\ColabReg-webfont.woff" />
+    <None Include="Content\themes\default\fonts\ColabThi-webfont.eot" />
+    <None Include="Content\themes\default\fonts\ColabThi-webfont.ttf" />
+    <None Include="Content\themes\default\fonts\ColabThi-webfont.woff" />
+    <None Include="Architecture\Controller_Edit_Action.sequencediagram" />
+    <None Include="Architecture\Models.cd" />
+    <None Include="Architecture\Employee_Validate.sequencediagram" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Views\Home\Index.iPhone.cshtml" />
+    <Content Include="Views\Shared\_EditorImagePanel.cshtml" />
+    <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Architecture\Controller_Edit_Action.sequencediagram.layout">
+      <DependentUpon>Controller_Edit_Action.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Architecture\Employee_Validate.sequencediagram.layout">
+      <DependentUpon>Employee_Validate.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>2468</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4465/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

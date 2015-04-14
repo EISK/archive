@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<Links>
+	<EmployeeListingPage>http://localhost:56180/web-form-samples/listing-page.aspx</EmployeeListingPage>
+	<EmployeeDetailsPage>http://localhost:56180/Eisk.Web/code-sample/details-page.aspx </EmployeeDetailsPage>
+  <LoginPage>http://localhost:56180/secured/log-in/log-in.aspx</LoginPage>
+  <AdminSecuredDefaultPage>http://localhost:56180/secured/admin/admin-default.aspx</AdminSecuredDefaultPage>
+  <MemberSecuredDefaultPage>http://localhost:56180/secured/member/member-default.aspx</MemberSecuredDefaultPage>
+	</Links>
+</root>

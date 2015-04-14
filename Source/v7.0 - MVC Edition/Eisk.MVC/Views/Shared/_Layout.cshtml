@@ -1,0 +1,89 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>EISK MVC - @ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="description" content="Description of your web page goes here." />
+    <meta name="keywords" content="Keywords for you web page go here. Each keyword or group of keyword phrases are separated by a comma. Keep this keyword list short and relevant to the content of this specific page and also relevant to the tile of the specific page" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="@Url.Content("~/Images/favicon.ico")" />
+    <!-- global CSS -->
+    <link href="@Url.Content("~/content/themes/default/reset.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/default/960.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/default/text.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/default/layout.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/default/bread-crumb.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/default/buttons.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/default/forms.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/default/grids.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/default/overcast/jquery-ui-1.8.18.custom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/content/themes/default/mvc-default.css")" rel="stylesheet" type="text/css" />
+    <!-- global scripts -->
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-1.6.4.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/eisk-menu.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/eisk-ajax-loader.js")"></script>
+</head>
+<body>
+    @Html.RenderMessages()
+    <div class="header clearfix">
+        <div class="container_16">
+            <a href="@Url.Content("~")" class="branding grid_3 alpha"></a>
+            <div class="top-nav grid_8" id="ParentMenu">
+                <a href="@Url.Content("~/")">EISK</a> <a href="@Url.Content("~/Employees/")">Employees</a>
+                <a href="@Url.Content("~/SecurityDemo/")">Security Samples</a>
+            </div>
+            <div class="grid_5 utility-menu omega">
+                @if (Request.IsAuthenticated)
+                {
+                    <text><strong>Welcome @User.Identity.Name</strong> | @Html.ActionLink("Log Off", "LogOff", "SecurityDemo")
+                    </text> }
+                else
+                {
+                    @:@Html.ActionLink("Log on", "LogOn", "SecurityDemo")
+
+                                                                                                                                                                                                                                                                                                              
+                }
+                @if (HttpContext.Current.IsDebuggingEnabled)
+                {
+                    <text> | </text> <a href="@Url.Content("~/Home/ResetData")">Reset data</a>  }
+            </div>
+        </div>
+    </div>
+    <div class="content-top clearfix">
+        <div class="container_16" id="ChildMenuContainer">
+            <div class="sub-nav">
+                <a href="@Url.Content("~/")">EISK Home</a> | <a href="@Url.Content("~/Home/About/")">About</a>
+            </div>
+            <div class="sub-nav">
+                <a href="@Url.Content("~/Employees/Index")">Employee Listing</a> | <a href="@Url.Content("~/Employees/Create")">Create Employee</a> | <a href="@Url.Content("~/Employees/Edit/1")">Edit Employee</a>
+                | <a href="@Url.Content("~/Employees/Details/1")">View Employee</a>
+            </div>
+            <div class="sub-nav">
+                <a href="@Url.Content("~/SecurityDemo/Member")">Member Area</a> | <a href="@Url.Content("~/SecurityDemo/Admin")">Admin Area</a>
+            </div>
+        </div>
+    </div>
+    <div class="content-main">
+        <div class="container_16">
+            <img id="loading-image" src="@Url.Content("~/Images/loader-life.gif")" style="display: none" />
+            @Html.Partial("_ViewSwitcher")
+            @RenderBody()
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container_16">
+            <div class="grid_10 alpha">
+                Employee Info Starter Kit is a web application that illustrate a wide range of architectural
+                guidelines and samples to address different types of real world challenges faced
+                by web application developers.<br />
+            </div>
+            <div class="grid_6 omega">
+                Copyright &copy; @System.DateTime.Now.Year <a href="http://www.facebook.com/ashraful.alam"
+                    target="_blank">Ashraful Alam</a>
+                <br />
+                Project Site: <a href="http://eisk.codeplex.com" target="_blank">EISK</a> | <a href="http://eisk.codeplex.com/" target="_blank">Product
+                Release: v7.0</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

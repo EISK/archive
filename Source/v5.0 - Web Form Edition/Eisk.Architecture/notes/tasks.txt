@@ -1,0 +1,24 @@
+﻿==============================================
+
+work with foreign key objects
+draw use case
+draw component diagrams
+draw activity diagrams
+draw uml class diagram
+EF: integrate with stored procedure
+EF: ORM Parsistance
+remove custom collection
+use database project advanced functionality
+check and use cache layer
+include cache layer tests
+use web test plug-in to set-up database
+use load test plug-in for report
+optimize custom data bound dropdown controls
+use asp.net 4.0 data pager control
+use asp.net 4.0 uploader control
+implement advanced validation rules in data container (email etc)
+finalyze data setup strategies for integration tests
+coded ui test basics
+coded ui test data driven
+
+==============================================

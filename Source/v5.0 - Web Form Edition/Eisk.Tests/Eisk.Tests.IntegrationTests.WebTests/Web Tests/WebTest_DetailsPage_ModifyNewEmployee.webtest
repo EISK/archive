@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest_DetailsPage_ModifyNewEmployee" Id="17691d55-73a9-4293-920e-9a7559c8be70" Owner="" Priority="0" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" DeploymentItemsEditable="\App_Data\WebTestSettings.xml" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="" StopOnError="False" RecordedResultFile="">
+  <Items>
+    <Request Method="GET" Version="1.1" Url="{{dsWebLink.Links.EmployeeListingPage}}" ThinkTime="4" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.search" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="search" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.ctl00$ContentPlaceholder1$gridViewEmployees$ctl02$lnbEdit.x" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Lau" />
+            <RuleParameter Name="Index" Value="12" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Version="1.1" Url="{{dsWebLink.Links.EmployeeListingPage}}" ThinkTime="14" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.search" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="search" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.ctl00$ContentPlaceholder1$formViewEmployee$txtFirstName" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtFirstName" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam5.ctl00$ContentPlaceholder1$formViewEmployee$txtLastName" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtLastName" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam6.ctl00$ContentPlaceholder1$formViewEmployee$txtTitleOfCourtesy" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtTitleOfCourtesy" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam7.ctl00$ContentPlaceholder1$formViewEmployee$txtnewBirthDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtnewBirthDate" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam8.ctl00$ContentPlaceholder1$formViewEmployee$txtHireDate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtHireDate" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam9.ctl00$ContentPlaceholder1$formViewEmployee$txtAddress" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtAddress" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam10.ctl00$ContentPlaceholder1$formViewEmployee$txtCity" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtCity" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam11.ctl00$ContentPlaceholder1$formViewEmployee$txtRegion" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtRegion" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam12.ctl00$ContentPlaceholder1$formViewEmployee$txtPostalCode" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtPostalCode" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam13.ctl00$ContentPlaceholder1$formViewEmployee$txtHomePhone" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtHomePhone" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam14.ctl00$ContentPlaceholder1$formViewEmployee$txtExtension" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_txtExtension" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam15.ctl00$ContentPlaceholder1$formViewEmployee$TextBox2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_TextBox2" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam16.ctl00$ContentPlaceholder1$formViewEmployee$btnSave" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00_ContentPlaceholder1_formViewEmployee_btnSave" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam17.ctl00$ContentPlaceholder1$formViewEmployee$ddlCountry" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;USA" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam18.ctl00$ContentPlaceholder1$formViewEmployee$ddlReportsTo" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="der=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="4" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__EVENTTARGET" Value="{{$HIDDEN1.__EVENTTARGET}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTARGUMENT" Value="{{$HIDDEN1.__EVENTARGUMENT}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATE" Value="{{$HIDDEN1.__VIEWSTATE}}" RecordedValue="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" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATEENCRYPTED" Value="{{$HIDDEN1.__VIEWSTATEENCRYPTED}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="search" Value="enter search phrase" RecordedValue="enter search phrase" CorrelationBinding="{{FormPostParam1.search}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$dropDownListEmployee" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$gridViewEmployees$ctl02$lnbEdit.x" Value="8" RecordedValue="8" CorrelationBinding="{{FormPostParam2.ctl00$ContentPlaceholder1$gridViewEmployees$ctl02$lnbEdit.x}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$gridViewEmployees$ctl02$lnbEdit.y" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="POST" Version="1.1" Url="{{dsWebLink.Links.EmployeeDetailsPage}}" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="">
+      <ValidationRules>
+        <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleFindText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Find Text" Description="Verifies the existence of the specified text in the response." Level="High" ExectuionOrder="BeforeDependents">
+          <RuleParameters>
+            <RuleParameter Name="FindText" Value="Update successful." />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="PassIfTextFound" Value="True" />
+          </RuleParameters>
+        </ValidationRule>
+      </ValidationRules>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__EVENTTARGET" Value="{{$HIDDEN1.__EVENTTARGET}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTARGUMENT" Value="{{$HIDDEN1.__EVENTARGUMENT}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATE" Value="{{$HIDDEN1.__VIEWSTATE}}" RecordedValue="XZP0pzF5OYiLUCRabu0gZ5h9UtQm0LdgAFvfmtGjeiiYRAGh6eS7p9Zr0m6Z9GNg1aaHZWJZHy3PaeQ1VNYxv3ZdmkBoLXk/Eore9yfnSY3I70fjAeVlNq2XI49tPE47b9FFeWPtMOyloR7oQX+lWVmi5E9WB3nqSb73sRP1c0VMoojFjNg6HWaUylPzZqoj3kgM7PV11zsD9c2IvW6v9cPhb6awTEBu3LTL391zvnyTHTAECt581TO1G3Uh6+o+MrfMVePDYVmSi1vm/PEixVptWhF/4hX/7zkgGln5hWEOjHU0qFDFLpzx2v+N3CRKgknio72qQtY2F+yLW2DUq2EBlPlgV+8/URAkXPyY6ZP4cgIv6rB50hZk+WWkL+iy" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATEENCRYPTED" Value="{{$HIDDEN1.__VIEWSTATEENCRYPTED}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="search" Value="enter search phrase" RecordedValue="enter search phrase" CorrelationBinding="{{FormPostParam3.search}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtFirstName" Value="Ashraful" RecordedValue="Ashraful" CorrelationBinding="{{FormPostParam4.ctl00$ContentPlaceholder1$formViewEmployee$txtFirstName}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtLastName" Value="Alam" RecordedValue="Alam" CorrelationBinding="{{FormPostParam5.ctl00$ContentPlaceholder1$formViewEmployee$txtLastName}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$ddlCountry" Value="USA" RecordedValue="USA" CorrelationBinding="{{FormPostParam17.ctl00$ContentPlaceholder1$formViewEmployee$ddlCountry}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$ddlReportsTo" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam18.ctl00$ContentPlaceholder1$formViewEmployee$ddlReportsTo}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtTitle" Value="MVP (modified)" RecordedValue="MVP (modified)" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtTitleOfCourtesy" Value="Mr." RecordedValue="Mr." CorrelationBinding="{{FormPostParam6.ctl00$ContentPlaceholder1$formViewEmployee$txtTitleOfCourtesy}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtnewBirthDate" Value="12/8/1948 12:00:00 AM" RecordedValue="12/8/1948 12:00:00 AM" CorrelationBinding="{{FormPostParam7.ctl00$ContentPlaceholder1$formViewEmployee$txtnewBirthDate}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtHireDate" Value="5/1/1992 12:00:00 AM" RecordedValue="5/1/1992 12:00:00 AM" CorrelationBinding="{{FormPostParam8.ctl00$ContentPlaceholder1$formViewEmployee$txtHireDate}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtAddress" Value="507 - 20th Ave. E. Apt. 2A" RecordedValue="507 - 20th Ave. E. Apt. 2A" CorrelationBinding="{{FormPostParam9.ctl00$ContentPlaceholder1$formViewEmployee$txtAddress}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtCity" Value="Seattle" RecordedValue="Seattle" CorrelationBinding="{{FormPostParam10.ctl00$ContentPlaceholder1$formViewEmployee$txtCity}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtRegion" Value="WA" RecordedValue="WA" CorrelationBinding="{{FormPostParam11.ctl00$ContentPlaceholder1$formViewEmployee$txtRegion}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtPostalCode" Value="98122" RecordedValue="98122" CorrelationBinding="{{FormPostParam12.ctl00$ContentPlaceholder1$formViewEmployee$txtPostalCode}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtNotes" Value="Mohammad Ashraful Alam is a Software Engineer, who is dedicated to Microsoft .NET based development. This Bangladeshi national is involved with project management and development of several US based software projects from his country. Already he has managed and developed 15 software projects, which are being used by several users of different countries, such as USA, Canada, Australia, and Bangladesh. While developing and managing a team, he contains and maintains a set of well defined engineering practices developed by him and other online developer community. Beside software development, he has also written several technical articles and research papers published by IEEE Computer Society and many other worlds recognized publishers. Before becoming engaged with software development, he was involved with Bengali literature and several Bengali news papers as freelance journalist and published around 150 articles, essays and short stories. Due to his willingness to give effort to improve " RecordedValue="Mohammad Ashraful Alam is a Software Engineer, who is dedicated to Microsoft .NET based development. This Bangladeshi national is involved with project management and development of several US based software projects from his country. Already he has managed and developed 15 software projects, which are being used by several users of different countries, such as USA, Canada, Australia, and Bangladesh. While developing and managing a team, he contains and maintains a set of well defined engineering practices developed by him and other online developer community. Beside software development, he has also written several technical articles and research papers published by IEEE Computer Society and many other worlds recognized publishers. Before becoming engaged with software development, he was involved with Bengali literature and several Bengali news papers as freelance journalist and published around 150 articles, essays and short stories. Due to his willingness to give effort to improve " CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtHomePhone" Value="(206) 555-9857" RecordedValue="(206) 555-9857" CorrelationBinding="{{FormPostParam13.ctl00$ContentPlaceholder1$formViewEmployee$txtHomePhone}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$txtExtension" Value="5467" RecordedValue="5467" CorrelationBinding="{{FormPostParam14.ctl00$ContentPlaceholder1$formViewEmployee$txtExtension}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$TextBox2" Value="http://accweb/emmployees/davolio.bmp" RecordedValue="http://accweb/emmployees/davolio.bmp" CorrelationBinding="{{FormPostParam15.ctl00$ContentPlaceholder1$formViewEmployee$TextBox2}}" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$btnSave" Value="Save" RecordedValue="Save" CorrelationBinding="{{FormPostParam16.ctl00$ContentPlaceholder1$formViewEmployee$btnSave}}" UrlEncode="True" />
+        <FileUploadParameter Name="ctl00$ContentPlaceholder1$formViewEmployee$fuPhotoUpload" FileName="" ContentType="application/octet-stream" GenerateUniqueName="False" />
+      </FormPostHttpBody>
+    </Request>
+  </Items>
+  <DataSources>
+    <DataSource Name="dsWebLink" Provider="Microsoft.VisualStudio.TestTools.DataSource.XML" Connection="|DataDirectory|\..\App_Data\WebTestSettings.xml">
+      <Tables>
+        <DataSourceTable Name="Links" SelectColumns="SelectOnlyBoundColumns" AccessMethod="Sequential" />
+      </Tables>
+    </DataSource>
+  </DataSources>
+  <WebTestPlugins>
+    <WebTestPlugin Classname="Eisk.TestHelpers.DefaultWebTestPlugin, Eisk.TestHelpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DisplayName="DefaultWebTestPlugin" Description="" />
+  </WebTestPlugins>
+</WebTest>

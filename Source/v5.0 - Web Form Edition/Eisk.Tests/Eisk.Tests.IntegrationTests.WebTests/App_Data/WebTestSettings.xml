@@ -1,0 +1,11 @@
+﻿<WebTestSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SqlConnectionString>Data Source=.\SQLEXPRESS;Integrated Security=true;Initial Catalog=EmployeeInfo_SK_5_0;</SqlConnectionString>
+  <WebServerExePath>C:\Program Files (x86)\Common Files\microsoft shared\DevServer\10.0\WebDev.WebServer40.exe</WebServerExePath>
+  <Links>
+    <EmployeeListingPage>http://localhost:3238/Eisk.Web/code-sample/listing-page.aspx </EmployeeListingPage>
+    <EmployeeDetailsPage>http://localhost:3238/Eisk.Web/code-sample/details-page.aspx </EmployeeDetailsPage>
+    <LoginPage>http://localhost:3238/Eisk.Web/public/log-on.aspx </LoginPage>
+    <AdminSecuredDefaultPage>http://localhost:3238/Eisk.Web/admin/admin-default.aspx </AdminSecuredDefaultPage>
+    <MemberSecuredDefaultPage>http://localhost:3238/Eisk.Web/private/member-default.aspx </MemberSecuredDefaultPage>
+  </Links>
+</WebTestSettings>

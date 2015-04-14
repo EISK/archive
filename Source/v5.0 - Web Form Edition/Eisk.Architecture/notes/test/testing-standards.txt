@@ -1,0 +1,279 @@
+﻿===================================================================
+EiskTests
+	TestHelper
+	UnitTests
+		DataAccessLayer
+			DatabaseDependent
+				[EntityName]Tests
+					[EntityName]DataFieldGetSetTests
+						[DataFieldName]_ValidValueToBeInsertedToDatabase_ShouldReturnSameValueFromDatabase
+						x [DataFieldName]_InvalidValueToBeInsertedToDatabase_ShouldNotReturnSameValueFromDatabase		[WHERE APPLICABLE]
+						x [DataFieldName]_InvalidTypeValueToBeInsertedToDatabase_ShouldNotReturnSameValueFromDatabase [WHERE APPLICABLE]
+						[DataFieldName]_InvalidSizeValueToBeInsertedToDatabase_ShouldNotReturnSameValueFromDatabase
+						[DataFieldName]_NullValueToBeInsertedToDatabase_ShouldReturnNullValueFromDatabase			[WHERE APPLICABLE: for allow null data fields]
+					[EntityName]ValidArgumentReturnsSuccessTests
+						CreateNew[EntityName]_ValidNewEmployeeObjectPassed_ShouldReturnNonZero
+						Update[EntityName]_ValidExistingEmployeeObjectPassed_ShouldReturnTrue
+					[EntityName]InvalidArgumentReturnsFailureTests													[WHERE APPLICABLE]
+					[EntityName]PerformanceTests
+						Get1000Employees_InLessThan10Seconds	
+				DatabaseUtilityTests
+					FormatXmlForIdArray_IdCollectionPassed_ShouldReturnXmlFormattedArray
+			DatabaseIndependent
+				[EntityName]Tests
+					[EntityName]PropertyGetSetTests
+						[PropertyName]_ConstructorSetsValidValue_GetsSameValue
+						[PropertyName]_SetsValidValue_GetsSameValue
+						x [PropertyName]_SetsInvalidValue_GetsDefaultValue											[WHERE APPLICABLE]
+						x [PropertyName]_DerfaultInitialState_GetsDefaultValue
+						x [PropertyName]_SetsInvalidValue_ThrowsException												[WHERE APPLICABLE]
+					[EntityName]ExpectedExceptionTests
+						[DataFieldName]_NullValueToBeInsertedToDatabase_ThrowsException								[WHERE APPLICABLE: for not allow null data fields]
+				DatabaseUtilityExpectedExceptionTests
+					SetCommandType_NullSqlCommandAsParameter_ThrowsException
+					SetCommandType_NullCommandTextAsParameter_ThrowsException
+		WebUnitTests
+			[PageName]Single[EntityName]DeleteTest
+		ConfigurationTests
+			DatabaseConfigurationTests
+				ConnectionTest_OpensAConnection_ShouldPassIfSuccessful
+				SchemaGenerationTest_RunsSchemaGenerationScript_ShouldPassIfSuccessful
+				DataGenerationTest_RunsDataGenerationScript_ShouldPassIfSuccessful
+				SchemaCleanupTest_RunsSchemaCleanupScript_ShouldPassIfSuccessful
+				DataCleanupTest_RunsDataCleanupScript_ShouldPassIfSuccessful
+			ProjectConfigurationTests
+				EmailTest_SendAnEmail_ShouldPassIfSuccessful
+				ErrorReportingTest
+				ListingPageLinkTest_SendsHttpRequest_ShouldPassIfFound
+				DllTest
+				RegularExpressionTest
+	DatabaseUnitTests
+		[EntityName]CreateNewEmployee_ValidNewEmployeeParametersPassed_ShouldReturnNonZero_StoredProcedureTest
+	WebTests
+		WebTest_ListingPage_FilteringEmployeeInGrid
+		WebTest_ListingPage_SecondPageNavaigationInGrid
+		WebTest_ListingPage_SingleEmployeeDelete
+		WebTest_ListingPage_BatchEmployeeDelete
+		[PageName]CreateNew[EntityName]Test
+		[PageName]CreateNew[EntityName]WithAttachmentTest
+		[PageName]Update[EntityName]WithAttachmentTest
+	LoadTests
+		Parameters:
+		Elapsed Time
+		User Load
+		Request	-- Requests/Sec, 
+		Request	-- Passed Requests/Sec, 
+		Request	-- Total Requests,
+		Errors	-- Errors/Sec, 
+		Request	-- Avg. Response Time, 
+		SYSTEM [http://adminfoo.net/2007/04/windows-perfmon-top-ten-counters.html]
+			Bottleneck analysis 
+				Why is my system running slow? A 'perfectly healthy' system would show all counters flatlined at zero
+				Processor utilization 
+					System\Processor Queue Length - number of threads queued and waiting for time on the CPU. Divide this by the number of CPUs in the system. If the answer is less than 10, the system is most likely running well. 
+				Memory utilization 
+					Memory\Pages Input/Sec - The best indicator of whether you are memory-bound, this counter shows the rate at which pages are read from disk to resolve hard page faults. In other words, the number of times the system was forced to retreive something from disk that should have been in RAM. Occasional spikes are fine, but this should generally flatline at zero. 
+				Disk Utilization 
+					PhysicalDisk\Current Disk Queue Length\driveletter - this is probably the single most valuable counter to watch. It shows how many read or write requests are waiting to execute to the disk. For single disks, it should idle at 2-3 or lower, with occasional spikes being okay. For RAID arrays, divide by the number of active spindles in the array; again try for 2-3 or lower. Because a shortage of RAM will tend to beat on the disk, look closely at the Memory\Pages Input/Sec counter if disk queue lengths are high. 
+				Network Utilization 
+					Network Interface\Output Queue Length\nic name - is the number of packets in queue waiting to be sent. If there is a sustained average of more than two packets in queue, you should be looking to resolve a network bottleneck. 
+					Network Interface\Packets Received Errors\nic name - packet errors that kept the TCP/IP stack from delivering packets to higher layers. This value should stay low. 
+			General activity counters 
+				Well, the system is healthy - and that's good ... but how hard is it working? 
+				Processor utilization 
+					Processor\% Processor Time\_Total - just a handy idea of how 'loaded' the CPU is at any given time. Don't confuse 100% processor utilization with a slow system though - processor queue length, mentioned above, is much better at determining this. 
+				Memory utilization 
+					Process\Working Set\_Total (or per specific process) - this basically shows how much memory is in the working set, or currently allocated RAM. 
+					Memory\Available MBytes - amount of free RAM available to be used by new processes. 
+				Disk Utilization 
+					PhysicalDisk\Bytes/sec\_Total (or per process) - shows the number of bytes per second being written to or read from the disk. 
+				Network Utilization 
+					Network Interface\Bytes Total/Sec\nic name - Measures the number of bytes sent or received. 
+	
+===================================================================
+Web Test
+
+		WebTest_ListingPage_FilteringEmployeeInGrid
+		WebTest_ListingPage_SecondPageNavaigationInGrid
+		WebTest_ListingPage_SingleEmployeeDelete
+		WebTest_ListingPage_BatchEmployeeDelete
+		[PageName]CreateNew[EntityName]Test
+		[PageName]CreateNew[EntityName]WithAttachmentTest
+		[PageName]Update[EntityName]WithAttachmentTest
+		
+WatiN Test
+
+------------------------------------
+
+TestHelperRoot.WhatInDotNet.Screens
+TestHelperRoot.WhatInDotNet
+Tests.UnitTests.Web.WhatInDotNet
+Tests.WebTests
+
+-- Filtering
+EmployeeListing_Launch_ShouldSuccessfullyLoadControls
+EmployeeListing_ReportsToFilterAll_ShouldSelectAllEmployees
+EmployeeListing_ReportsToFilterSingle_ShouldSelectForSingleReportsTo
+EmployeeListing_PageTwoClickedReportsToFilterAll_ShouldMoveToSecondPage
+
+-- Delete Batch
+EmployeeListing_DeleteBatchButtonClicked_ShouldShowConfirmbox
+EmployeeListing_DeleteBatchButtonClicked_ShouldDeleteMultipleEmployeesUponYesConfirmation
+EmployeeListing_DeleteBatchButtonClicked_ShouldNotDeleteMultipleEmployeesUponCancelConfirmation
+
+-- Delete Single
+EmployeeListing_DeleteSingleButtonOnGridClicked_ShouldShowConfirmbox
+EmployeeListing_DeleteSingleOnGridClicked_ShouldDeleteSingleEmployeeUponYesConfirmation
+EmployeeListing_DeleteSingleOnGridClicked_ShouldNotDeleteEmployeeUponCancelConfirmation
+
+-- Edit Details
+EmployeeListing_EditDetailesClicked_ShouldMoveToDetailsPage
+EmployeeListing_EditDetailesClicked_ShouldLoadToBeUpdatedEmployeeDataToDetailsPage
+EmployeeListing_EditDetailesClicked_ShouldMoveToDetailsPageWithEditMode
+EmployeeListing_EditDetailesClicked_ShouldUpdateEmployeeIdSessionDataWithToBeUpdatedEmployeeId
+
+-- View Details
+EmployeeListing_ViewDetailesClicked_ShouldMoveToDetailsPage
+EmployeeListing_ViewDetailesClicked_ShouldLoadToBeViewedEmployeeDataToDetailsPage
+EmployeeListing_ViewDetailesClicked_ShouldMoveToDetailsPageWithViewMode
+EmployeeListing_ViewDetailesClicked_ShouldUpdateEmployeeIdSessionDataWithToBeViewedEmployeeId
+
+-- Insert Mode
+EmployeeListing_AddEmployeeClicked_ShouldMoveToAddEmployeePage
+EmployeeListing_AddDetailesClicked_ShouldLoadNoDataToDetailsPage
+EmployeeListing_AddEmployeeClicked_ShouldMoveToAddEmployeePageWithInsertModel
+EmployeeListing_AddEmployeeClicked_ShouldUpdateEmployeeIdSessionDataWithEmployeeIdZero
+
+-- Edit Mode
+EmployeeDetails_SaveButtonClickedOnEditMode_ShouldSaveDataInDatabase
+EmployeeDetails_SaveButtonClickedOnEditMode_ShouldShowSuccessMessage
+EmployeeDetails_BackButtonClickedOnEditMode_ShouldBackToEmployeeListingPage
+EmployeeDetails_PrintInfoButtonClickedOnEditMode_ShouldLoadPrintPage
+
+-- Insert Mode
+EmployeeDetails_SaveButtonClickedOnInsertMode_ShouldInsertDataInDatabase
+EmployeeDetails_SaveButtonClickedOnInsertMode_ShouldShowSuccessMessage
+EmployeeDetails_BackButtonClickedOnInsertMode_ShouldBackToEmployeeListingPage
+EmployeeDetails_PrintInfoButtonClickedOnInsertMode_ShouldLoadPrintPageIfValidDataEntered
+
+-- View Mode
+EmployeeDetails_EditButtonClickedOnViewMode_ShouldSwitchToEditMode
+EmployeeDetails_BackButtonClickedOnViewMode_ShouldBackToEmployeeListingPage
+EmployeeDetails_PrintInfoButtonClickedOnViewMode_ShouldLoadPrintPage
+
+-- Validation
+EmployeeDetailsValidation_SaveButtonClickedOnEditModeWithNoEntryForFirstName_ShouldFireRequiredMessageForFirstName
+EmployeeDetailsValidation_SaveButtonClickedOnEditModeWithInValidDateFormatEntryForBirthDate_ShouldFireDateFormatValidationMessageForBirthDate
+
+-- Calender
+CalenderControl_CloseButtonClicked_ShouldHideCalender
+CalenderControl_ThisMonthClicked_ShouldMoveToCurrentMonth
+CalenderControl_ThisMonthClicked_ShouldMoveToCurrentMonth
+CalenderControl_NextMonthClicked_ShouldMoveToNextMonth
+CalenderControl_PrevMonthClicked_ShouldMoveToPrevMonth
+BirthDateCalenderControl_CalenderIconClicked_CalenderControlLoaded
+BirthDateCalenderControl_DateSelected_ShouldLoadSelectedDateToBirthDateTextBox
+
+-- Print Page
+PrintInfo_InitialyzedProperly_ShouldLoadDataForProvidedEmployee
+PrintInfo_PrintButtonClicked_ShouldShowPrintDialogue
+PrintInfo_CloseButtonClicked_ShouldClosePrintWindow
+
+===================================================================
+Naming Standard:
+
+- All test classes should be suffixed as "Tests"
+- [MethodName_StateUnderTest_ExpectedBehavior] 
+- StateBeforeTest_Action/Event_Result
+- Given_When_Then (Given = Context, When-Then = Specification)
+
+
+First part should be:
+- whom?
+- where?
+- 
+
+===================================================================
+
+REFERENCE
+
+===================================================================
+TIPS: http://msdn.microsoft.com/en-us/magazine/cc163665.aspx
+
+RULES:
+
+- Code for Better Readability
+	-- Always use CONST for constants
+	-- Use test method name: [MethodName_StateUnderTest_ExpectedBehavior] 
+- Code is More Understandable 
+	-- Unit test shows how a method being called
+- Tracking Bugs is Easier
+	-- But make sure the test itself has no bug 
+- Code is Easier to Maintain 
+	-- Don't Repeat Yourself
+	-- Don't create instances of classes directly inside a unit test. If you see the word "new" in front of any class that is not part of the unit test framework, you should consider putting that creation code in a special factory method that creates the object instance for you.
+- Test Coverage and Testing Angles 
+	-- How do you know if you have good coverage for your new code? Try removing a line or a constraint check. If all tests still pass, you don't have enough code coverage and you probably need to add another unit test.
+- When a Test Fails Incorrectly
+	-- Delete the failing test after verifying that it is no longer valid—essentially since the old requirement is either invalid or is tested elsewhere.
+	-- Or, change the old test so you test the new requirement (essentially using a new test), and test the old requirement under new settings (the test logic stays the same, but the initialization function may change).
+- Making Tests Easy to Run 
+	-- Reduce the test that needs configuration and split them from non-configurable tests
+- Do configuration tests (links, email, database, assemblies)
+- Avoid Test to be Bigger Than the Method to be Tested
+- Avoid Dependencies Between Tests
+- Avoid Multiple Asserts in a Single Unit Test 
+- Avoid Any Impact on Live Data Thru Change by Test
+- Avoid dependencies, where possible 
+	-- Use dependency injection
+- Avoid database dependent call, where possible
+	-- Use mock framework instead
+- Avoid Partially Relevant Code in Your Setup Method
+	-- For Setup Method, avoid variables that are only used by some of the tests. 
+- Avoid testing private methods
+
+===================================================================
+Other links:
+
+http://msdn.microsoft.com/en-us/magazine/cc164243.aspx
+
+===================================================================
+Naming standards for unit tests
+http://weblogs.asp.net/rosherove/archive/2005/04/03/TestNamingStandards.aspx
+The basic naming of a test comprises of three main parts:
+
+ [MethodName_StateUnderTest_ExpectedBehavior] 
+
+Examples: 
+Public void Sum_NegativeNumberAs1stParam_ExceptionThrown() 
+Public void Sum_NegativeNumberAs2ndParam_ExceptionThrown () 
+Public void Sum_SimpleValues_Calculated ()
+
+===================================================================
+What should you write in a test Assert message?
+http://weblogs.asp.net/rosherove/archive/2005/04/11/TestAssertMessages.aspx
+
+DO
+Express what should have happened or what did not happen 
+"Foo should have thrown an exception" 
+"Foo did not throw any exception" (not as good as the previous one) 
+"Foo should have returned a new ID" 
+"Foo should not allow negative numbers as parameters" 
+"Foo should open the connection before returning it" 
+"Foo did not open the connection before returning it" 
+"Person class did not have a valid GUID by default"
+
+Don't
+Provide empty or meaningless messages 
+Provide messages that repeat the name of the test case 
+Provide messages that simply state the test inputs
+
+===================================================================
+http://www.ssw.com.au/ssw/Standards/Rules/RulesToBetterUnitTests.aspx
+
+Test Object			Recommended Style		Example  
+Project Name		UnitTests				UnitTests  
+Test Fixture Name	[Type]Tests				OrdersTests, CustomerTests, DeveloperTests  
+Test Case			[Function]Test			ConstructorTest, InsertDataTest, LoginTest  
+Set Up				SetUp					X 
+Tear Down			TearDown				X

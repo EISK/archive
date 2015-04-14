@@ -1,0 +1,3 @@
+# To add nested master page design support
+CodeFileBaseClass="BasePage" MasterPageFile="~/master/parent-root.master" RuntimeMasterPageFile="~/master/one-column-child.master"  
+<%@ Page Language="C#" CodeFileBaseClass="BasePage" MasterPageFile="~/master/parent-root.master" RuntimeMasterPageFile="~/master/one-column-child.master"  AutoEventWireup="true" CodeFile="Default4.aspx.cs" Inherits="tester_Default4" Title="My Page Title" %>

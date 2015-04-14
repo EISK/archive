@@ -1,0 +1,50 @@
+﻿@model Eisk.Models.EmployeeViewModel
+@{
+    ViewBag.Title = Model.FullName;
+}
+<div class="grid_8 alpha">
+    <h1 class="title-regular">
+        @Model.FullName
+    </h1>
+</div>
+<div class="grid_8 omega">
+    <div class="action-links">
+    </div>
+</div>
+<br class="clear" />
+<div class="grid_3 alpha">
+    <a href="@Model.EmployeeImageSource" target="_blank">
+        <img id="Img1" alt="employee image" class="grid_3 alpha profile-image" src="@Model.EmployeeImageSource" />
+    </a>
+</div>
+<ul class="grid_5 profile-summery">
+    <li>@Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }, new { @class = "action-button ico-edit" })
+        <a href="#" onclick="print()" class="action-button ico-print">Print</a> </li>
+    <li>
+        <label>
+            Title:</label>
+        @Model.Title </li>
+    <li>
+        <label>
+            Supervisor:</label>
+        @Model.SupervisorFullName</li>
+    <li>
+        <label>
+            Hire Date:
+        </label>
+        @Model.HireDate</li>
+    <li>
+        <label>
+            Date of Birth:</label>
+        @Model.BirthDate</li>
+    <li>
+        <label>
+            Address:</label>
+        @Model.FullAddress</li>
+    <li>
+        <label>
+            Home Phone</label>
+        @Model.PhoneWithExtension</li>
+</ul>
+<div class="grid_8 detail-profile omega">
+    @Model.ShortNotes</div>

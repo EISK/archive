@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="414c7a8c-e941-457f-b45c-7d86f93b80c4" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="a0ab9ab1-89f7-48c2-8c4c-25eab93fc1a4" name="Comment1">
+      <body>Presentation Layer basically consists of ASPX pages</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="8fa7504c-d7cc-4a20-98e6-61071c90452d" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="55a6a1d6-51ed-433f-aa34-0de59630ccee" name="Eisk.DataAccessLayer" requiredNamespace="Eisk.DataAccessLayer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="238e3035-52dd-4c82-981f-bfcfe6a69247" direction="Forward">
+          <layerMoniker Id="171a11e2-10c7-4aca-9f57-605e0c21b7d4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="22ba8a75-4d53-410c-9874-477c9feed487" name="Eisk.DataAccessLayer">
+          <ArtifactNode Label="Eisk.DataAccessLayer" Category="CodeSchema_Namespace" Id="(Namespace=Eisk.DataAccessLayer)" />
+          <ExpandedNode Id="(Assembly=Eisk.DataAccess)" Label="Eisk.DataAccess.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Dsl.NamespaceUsedInAssembly" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Namespace=Eisk.DataAccessLayer)" Label="Eisk.DataAccessLayer" Category="CodeSchema_Namespace">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="8fa7504c-d7cc-4a20-98e6-61071c90452d" name="Eisk.PresentationLayer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="cb044da0-99b2-4dc5-a16e-f631f7e8e695" direction="Forward">
+          <layerMoniker Id="fcd12b03-c44a-4352-a1ff-5f2350fa8a1c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d8f4960c-5bfb-4278-9883-98bb470b3aec" direction="Forward">
+          <layerMoniker Id="171a11e2-10c7-4aca-9f57-605e0c21b7d4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="f8c29d30-68d3-4625-b949-9049942582b6" name="Eisk.PresentationLayer">
+          <ArtifactNode Label="Eisk.PresentationLayer" Category="CodeSchema_Namespace" Id="(Namespace=Eisk.PresentationLayer)" />
+          <ExpandedNode Id="(Assembly=Eisk.DataAccess)" Label="Eisk.DataAccess.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Dsl.NamespaceUsedInAssembly" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Namespace=Eisk.PresentationLayer)" Label="Eisk.PresentationLayer" Category="CodeSchema_Namespace">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="171a11e2-10c7-4aca-9f57-605e0c21b7d4" name="Eisk.BusinessEntities" requiredNamespace="Eisk.BusinessEntities">
+      <references>
+        <reference Id="97bec055-2d48-4104-ba9d-14ad8246da4d" name="Eisk.BusinessEntities">
+          <ArtifactNode Label="Eisk.BusinessEntities" Category="CodeSchema_Namespace" Id="(Namespace=Eisk.BusinessEntities)" />
+          <ExpandedNode Id="(Assembly=Eisk.DataAccess)" Label="Eisk.DataAccess.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Dsl.NamespaceUsedInAssembly" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Namespace=Eisk.BusinessEntities)" Label="Eisk.BusinessEntities" Category="CodeSchema_Namespace">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="fcd12b03-c44a-4352-a1ff-5f2350fa8a1c" name="Eisk.BusinessLogicLayer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a1199816-a4ed-4b85-87b6-52d2a0387685" direction="Forward">
+          <layerMoniker Id="55a6a1d6-51ed-433f-aa34-0de59630ccee" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="5cf85a1f-f5bd-48c9-9799-90887a950022" direction="Forward">
+          <layerMoniker Id="171a11e2-10c7-4aca-9f57-605e0c21b7d4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="2308b15f-188e-4085-a5a2-ea53be735906" name="Eisk.BusinessLogicLayer">
+          <ArtifactNode Label="Eisk.BusinessLogicLayer" Category="CodeSchema_Namespace" Id="(Namespace=Eisk.BusinessLogicLayer)" />
+          <ExpandedNode Id="(Assembly=Eisk.DataAccess)" Label="Eisk.DataAccess.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Dsl.NamespaceUsedInAssembly" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Namespace=Eisk.BusinessLogicLayer)" Label="Eisk.BusinessLogicLayer" Category="CodeSchema_Namespace">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

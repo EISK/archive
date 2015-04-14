@@ -1,0 +1,6 @@
+﻿@model Eisk.Models.MessageViewModel
+<div id="SiteAlert" class="alert alert-@Model.MessageType.ToString().ToLower()">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>@Model.MessageType!</strong> @Model.Message
+</div>
+

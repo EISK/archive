@@ -1,0 +1,223 @@
+﻿body
+{
+    text-align: center;
+    background-color: #E9EDE6;
+}
+
+.header
+{
+    background-image: url('images/eisk-header-bg.png');
+    background-repeat: repeat-x;
+    height: 89px;
+    color: #fff;
+}
+
+.container_16
+{
+    text-align: left;
+}
+.header .container_16
+{
+    padding-top: 30px;
+}
+.header .utility-menu
+{
+    font: ColaborateLightRegular;
+    color: #fff;
+    font-size: 0.85em;
+    position: relative;
+    top: -20px;
+    text-align: right;
+}
+.header .utility-menu a
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .utility-menu a:hover
+{
+    color: #eaeaea;
+}
+.top-nav
+{
+    font-size: 1em;
+    position: relative;
+    top: 1em;
+}
+.top-nav a
+{
+    color: #FFFFFF;
+    display: inline;
+    padding: 4px 10px;
+    text-decoration: none;
+}
+.top-nav a:hover, .top-nav .current
+{
+    background-color: #506B19;
+    border: 1px solid #708B42;
+    margin: 0 -1px;
+}
+.sub-nav
+{
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    color: #cfcfcf;
+}
+.sub-nav a
+{
+    color: #848484;
+    text-decoration: none;
+}
+.sub-nav a:hover, .sub-nav .current
+{
+    color: #1f2610;
+    text-decoration: none;
+}
+.branding
+{
+    background-image: url('images/eisk-branding.png');
+    background-repeat: no-repeat;
+    height: 45px;
+}
+.title-regular, .title-regular-2, .title-regular-3
+{
+    font-weight: normal;
+}
+.title-regular
+{
+    color: #4d6f33;
+    font-size: 2em;
+}
+.title-regular-2
+{
+    border-bottom: 1px solid #DBE1D1;
+    color: #97AF6A;
+}
+.content-main, .content-top
+{
+    background-color: #fff;
+}
+.content-main
+{
+    padding-bottom: 40px;
+}
+.content-main a
+{
+    color: #4d6f33;
+    text-decoration: none;
+}
+.content-main a:hover
+{
+    color: #1d573e;
+    text-decoration: none;
+}
+.detail-profile
+{
+}
+.profile-image
+{
+    margin-bottom: 10px;
+    width: 180px;
+    height: 164px;
+}
+.detail-profile .title-regular
+{
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: -16px;
+}
+
+.footer
+{
+    font-size: 1em;
+    line-height: 1.2em;
+    padding: 20px 0;
+}
+
+.action-links
+{
+}
+.action-links .ico-edit
+{
+}
+
+.action-button
+{
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    margin-right: 10px;
+}
+
+.ico-edit
+{
+    background-image: url('../../../Images/ico-edit.png');
+}
+.ico-print
+{
+    background-image: url('../../../Images/ico-print.png');
+}
+.ico-arrow-back
+{
+    background-image: url('../../../Images/ico-arrow-back.png');
+}
+
+.profile-summery
+{
+    list-style: none outside none;
+}
+.profile-summery li
+{
+    border-bottom: 1px solid #DBE1D1;
+    list-style: none outside none;
+    margin-left: 0;
+    padding: 5px 10px;
+}
+
+.round-box
+{
+    background-color: #F8F9F7;
+    border-radius: 6px 6px 6px 6px;
+    padding: 20px;
+}
+.listing-card-view
+{
+}
+.listing-card-view ul
+{
+    float: left;
+}
+
+.listing-card-view ul li
+{
+    list-style: none outside none;
+}
+.listing-card-view ul li
+{
+    margin-left: 0;
+}
+.listing-card-view .card-list
+{
+}
+.listing-card-view .card-list-image
+{
+    float: left;
+    margin-right: 10px;
+    width: 50px;
+}
+.listing-card-view .card-list-action-links
+{
+}
+.listing-card-view .card-list:first-child
+{
+    margin-left: 0;
+}
+.listing-card-view .card-list:last-child
+{
+    margin-right: 0;
+}
+.align-center
+{
+    text-align: center;
+}

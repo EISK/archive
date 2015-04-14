@@ -1,0 +1,26 @@
+=====================================================
+OBJECT DATA SOURCE MAPPING RULE FOR NULL VALUE
+
+- if we set 'ConvertEmptyStringToNull' in parameter, as true then it will pass as '1/1/1' or '0' for date time and int respectively.
+- if we set 'ConvertEmptyStringToNull' in parameter, as false then it will through an exception for invalid type for datetime/int.
+- 'ConvertEmptyStringToNull' is true by default for the parameters that are explicitly in the parameter collection in aspx, otherwise false.
+- if we set the method paramter as nullable datetime type, then it will pass null for no values ('ConvertEmptyStringToNull' must be set as true)
+
+=====================================================
+DEFAULT CONVENTIONS FOR NULL DATA
+
+	-- OPTIONAL STRING DATA
+	-- default convension for no user input: <empty string>
+	-- reason: saving <null> value for optional data includes an additional overheard, which binding it to show, which shows 'Null' text, that creates confusion.
+	-- OPTIONAL DATE DATA
+	-- default convension for no user input: <null>
+	-- reason: there is no meaning way to store built-in null date data. Rather using min value for date time, saving <null> would more useful. However we must have suppoing codes to bind <null> data for date time types.
+	-- OPTIONAL INTEGER DATA
+	-- default convension for no user input: 0
+	-- reason: saving <null> value for optional data includes an additional overheard, which binding it to show, which shows 'Null' text, that creates confusion.
+	-- OPTIONAL BOOL DATA
+	-- default convension for no user input: false
+	-- reason: saving <null> value for optional data includes an additional overheard
+	
+=====================================================
+

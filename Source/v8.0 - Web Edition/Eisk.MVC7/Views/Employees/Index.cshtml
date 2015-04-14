@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Eisk.Models.Employee>
+@{
+    ViewBag.Title = "Employee Listing";
+}
+
+<script type="text/javascript">
+
+    $("#chkSelectAll").live("click", function (e) {
+        $("INPUT[type='checkbox']").attr('checked', $('#chkSelectAll').is(':checked'));
+    });
+    $("#btnDeleteSelected").live("click", function (event) {
+        if (confirm('Are you sure you want to delete these items?')) {
+
+            var idArray = new Array();
+
+            $("input:checked.deleteCheckbox").each(function (i) {
+                idArray[i] = $(this).attr('pkey');
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "DeleteSelected",
+                dataType: "json",
+                traditional: true,
+                data: {
+                    ids: idArray
+                }
+            })
+            .done(function () {
+                location.reload();
+                $("INPUT[type='checkbox']").attr('checked', false);
+            })
+            .fail(function () {
+                alert('Deletion failed.');
+            })
+            ;
+        }
+        event.preventDefault();
+    });
+
+</script>
+<h1 class="title-regular clearfix">Employee Listing</h1>
+<p>
+    In a felis turpis. Vivamus a purus quis erat rutrum facilisis id viverra ligula.
+    Suspendisse ac purus quam, et pellentesque sapien. Vivamus tempor orci ut justo
+    condimentum non mattis urna sodales. Mauris laoreet dolor nec ipsum porta scelerisque
+    tincidunt dui pharetra
+</p>
+<div>
+    <p>
+        <input id="btnDeleteSelected" type="button" class="button green" value="Delete Selected" />
+    </p>
+
+</div>
+<div class="HeaderStyle clearfix">
+    <div class="grid_1 alpha">
+        <input type="checkbox" id="chkSelectAll" />
+    </div>
+    <div class="grid_4">
+        <b>First Name</b>
+    </div>
+    <div class="grid_4">
+        <b>Last Name</b>
+    </div>
+    <div class="grid_3">
+        <b>Country</b>
+    </div>
+    <div class="grid_2">
+        <b>Sub #</b>
+    </div>
+    <div class="grid_1">
+        <b>View</b>
+    </div>
+    <div class="grid_1 omega">
+        <b>Edit</b>
+    </div>
+</div>
+<div id="gridViewEmployees" rules="all" class="RowStyle clearfix">
+    @foreach (var item in Model)
+    {
+        <div class="grid_1 alpha">
+            <input type="checkbox" class="deleteCheckbox" pkey="@item.Id">
+        </div>
+        <div class="grid_4">@Html.DisplayFor(modelItem => item.FirstName)</div>
+        <div class="grid_4">@Html.DisplayFor(modelItem => item.LastName)</div>
+        <div class="grid_3">@Html.DisplayFor(modelItem => item.Address.Country)</div>
+        <div class="grid_2">@Html.DisplayFor(modelItem => item.Subordinates.Count)</div>
+        <div class="grid_1">
+            <a href="@Url.Action("Details", new { id = item.Id })"
+                                    >View</a>
+        </div>
+        <div class="grid_1 omega">
+            <a href="@Url.Action("Edit", new { id = item.Id })"
+                                    >Edit</a>
+        </div>
+    }
+</div>

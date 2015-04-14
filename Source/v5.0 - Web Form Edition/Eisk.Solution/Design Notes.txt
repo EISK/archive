@@ -1,0 +1,133 @@
+===============================================================================================
+Design Consideration
+
+- DTO service is needed? or can be resolved with POCO?
+
+Data Service Business Logic/Ajax ->		Data Service		-> Data Access Layer
+										Data Service		-> Business Entities
+										Business Service	-> Business Logic Layer (Strategies) -> Data Access Layer
+										Business Service	-> Business Entities
+
+===============================================================================================
+Planned Platforms
+
+- USER INTERFACE
+
+1 - ASP.NET
+2 - ASP.NET Ajax/jQuery
+3 - ASP.NET Html5/CSS3.0
+4 - ASP.NET MVC
+5 - ASP.NET Dynamic Data
+6 - Silverlight 
+7 - Windows Azure
+
+- DATA ACCESS
+
+1 - LINQ to Entities
+2 - LINQ to Entities (With Generic Repository)
+3 - LINQ Compiled Query
+4 - LINQ Reactive Extension
+5 - LINQ PLinq
+6 - e-SQL
+7 - WCF RIA Service
+8 - WCF Data Service
+9 - Business Service
+10 - Cloud Storage Data Service
+11 - Sql Azure Wrapper
+12 - Stored Procedure Wrapper
+13 - Cache Service (single machine)
+14 - Cache Service/Velocity (distributed)
+15 - In-memory database (XDD)
+16 - CLR Stored Procedure
+17 - Ajax Service Proxy
+18 - HTML5 Local Storage
+
+===============================================================================================
+
+ Handling Special Values: Null, Empty, Un-assigned, Default Values and Computed Values
+
+ * Assigned Null Value Check
+ *  * Assigned Null Values are the values that are assigned from caller/UI layer with Null values.
+ *  * Typically implemented on required fields, that are string types
+ *  * Required data fields that are value type (such as int etc) don't require Null value check, as the fields are set non-nullable (without ? declaration)
+ *  * Optional fields don't require Null value check, since Null values are allowed for these fields
+ *  * Assuming the caller layer (UI layer) hasn't implemented the validation for required fields.
+ * Assigned Empty Value (provided by caller/UI layer) Check
+ *  * Assigned Empty Values are the values that are assigned from caller/UI layer, with system default values of data field types.
+ *  * Typically implemented on required and optional fields that are string or value type (int etc)
+ *  * For required fields, both null and empty values are not permitted in the system
+ *  * For optional fields, null values are allowed to the system, but empty values are not permitted in the system
+ *  * Assuming the caller layer (UI layer) hasn't implemented the validation for required fields.
+ *  * Assuming the caller layer (UI layer) hasn't implemented "pass empty value as null" function for required and optional fields correctly.
+ *  Un-assigned Value Check
+ *   * Refers to the data fields, which hasn't been bound with any UI controls, thus remained un-assigned and having default system valus of data field types.
+ *   * To perform the un-assigned value check, we need to perform the similar operation for property GETTERs as implemented below for propert SEETERs (or alternatively we can use a check method, instead of validation in getter and setter, in that case we have to call the validation method explicitly, before performing any data operation).
+ *   * Assuming few data fields of a given data container has not been bound with UI.
+ *   * NOT supported in current architecture.
+ *  Default Values
+ *   * Default values are typically implemented on optional fields (since for required fields we assume user needs to provide data for that)
+ *   * Can be implemented for Assigned Empty Value or Un-assigned Values
+ *  Computed Values  
+ *   * Data Container Only                -  (with READ-ONLY: property having get/set)
+ *   * Data Container and Database Table  -  (with READ-ONLY: property having get)
+ *   * Data Container and Database Table  -  (with READ-WRITE: property having get/set, marged with Default Value Pattern)
+ *   
+ * Special Value Validation Notes:
+ *   * Never assume the upper or lower layer is performing validation properly.
+ *      * Currently the validation in data access layer protects from wrong data from UI layer
+ *      * Currently the validation in data access layer protects from wrong data from data access layer
+ *   * Performing validation on caller level (i.e. UI layer, data acess layer) is better, as it reduces network/database roundtrips.
+ *   Default Value Notes:
+ *    * Never assume the upper or lower layer is filling the default value.
+ *    * Filling the default values on caller level (i.e. UI layer, data acess layer) is better, as you may not know which data will be considered as the 'default value'.
+
+===============================================================================================
+
+Validation Scopes
+ 
+* * Single Row Dependent Validation
+*      * Typically doesn't require database access
+*      (1) Independent Data Field
+*          * Example: required field
+*          * Example: format validation
+*      (2) Dependent Data Fields
+*          * Example: BirthDate can't be greater than HireDate
+* * Multiple Rows Dependent Validation
+*      * Typically requires database access
+*      * Example: An employee can't be supervisor of more than 5 employees.
+*      * Example: More than one employees can't reside under same Addressline
+
+===============================================================================================
+Pending Design Considerations:
+
+Cross Cutting Concerns:
+
+* Caching
+* Logging
+* Exception Management
+* Validation
+* Authorization
+
+* Communication
+* Configuration Management
+* State Management
+
+Development Approach:
+
+* In-memory development using Entity Framewok Model First approach
+
+===============================================================================================
+Release check list:
+
+- web.sitemap
+- global.asax
+- default.aspx
+- web.config
+
+===============================================================================================
+Data Access Integration Test/Unit Tests
+
+Automated Unit Tests: to test if the code and db is synced
+Custom Unit Tests: to test if the db conforms expected system design
+
+===============================================================================================

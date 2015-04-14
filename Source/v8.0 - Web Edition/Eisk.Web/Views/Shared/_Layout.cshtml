@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link href="@Url.Content("~/Content/themes/default/css/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/default/css/overcast/jquery-ui-1.8.18.custom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/default/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/default/css/bootstrap-theme.min.css")" rel="stylesheet" type="text/css" />
+    
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-1.6.4.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-ui-1.8.18.custom.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.min.js")"></script>
+
+    <style type="text/css">
+        .ui-margin {
+            margin: 20px;
+        }
+    </style>
+
+    
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+            $(".close").click(function () {
+                $(".alert").alert();
+            });
+        });
+    </script>*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".close").click(function () {
+                $("#myAlert").alert('close');
+            });
+        });
+    </script>
+
+    @*@System.Web.Optimization.Styles.Render("~/Content/themes/default/css")*@
+    @*@System.Web.Optimization.Scripts.Render("~/bundles/modernizr")*@
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("EISK8", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Content("~/")">EISK</a> </li>
+                    <li><a href="@Url.Content("~/Employees/")">Employees</a></li>
+                    <li><a href="@Url.Content("~/SecurityDemo/")">Security Samples</a></li>
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @Html.RenderMessages()
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @*@System.Web.Optimization.Scripts.Render("~/bundles/jquery")*@
+    @*@System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")*@
+    @*@RenderSection("scripts", required: false)*@
+
+</body>
+</html>

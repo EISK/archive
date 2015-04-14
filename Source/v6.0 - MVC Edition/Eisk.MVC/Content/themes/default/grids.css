@@ -1,0 +1,109 @@
+﻿#AjaxGrid, #AjaxGrid input, #AjaxGrid button
+{
+    clear: both;
+    width: 100%;
+}
+#AjaxGrid thead
+{
+    white-space: nowrap;
+    font-size: 14px;
+    height: 26px;
+    white-space: nowrap;
+    font-family: Arial;
+    font-weight: normal;
+    color: #000;
+}
+
+#AjaxGrid thead th
+{
+    background-color: #EEEEEE;
+    background-image: -moz-linear-gradient(center top , #F9F9F9, #E3E4E6);
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+#AjaxGrid thead th:hover
+{
+    background-color: #EEEEEE;
+    background-image: -moz-linear-gradient(center top , #eeeeee, #cccccc);
+    border-left-color: #eeeeee;
+    border-right-color: #eeeeee;
+}
+
+
+#AjaxGrid thead a, #AjaxGridContainer .AjaxGridNavigation a
+{
+    text-decoration: none;
+}
+#AjaxGrid .error
+{
+    background-color: #f66;
+    color: #000;
+}
+#AjaxGridContainer .hidden
+{
+    display: none;
+}
+#AjaxGridContainer .AjaxGridNavigation input.pageNum
+{
+    width: 2em;
+}
+#AjaxGridContainer .AjaxGridNavigation .itemsPerPage
+{float:right;
+}
+
+.AjaxGridNavigation
+{
+    background-color: #EEEEEE;
+    background-image: -moz-linear-gradient(center top , #eeeeee, #cccccc);
+    border: 1px solid #eeeeee;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+}
+.AjaxGridNavigation .refresh, .AjaxGridNavigation .begin, .AjaxGridNavigation .prev, .AjaxGridNavigation .next, .AjaxGridNavigation .end, #AjaxGrid .uparrow, #AjaxGrid .downarrow, #AjaxGrid .editrecord, #AjaxGrid .deleteRow
+{
+    width: 16px;
+    height: 16px;
+    float: left;
+    background-repeat: no-repeat;
+}
+.AjaxGridNavigation .refresh
+{
+    background-image: url('../../../Images/ico-refresh.png');
+}
+.AjaxGridNavigation .begin
+{
+    background-image: url('../../../Images/iso-resultset-first.png');
+}
+.AjaxGridNavigation .prev
+{
+    background-image: url('../../../Images/ico-resultset-previous.png');
+}
+.AjaxGridNavigation .next
+{
+    background-image: url('../../../Images/ico-resultset-next.png');
+}
+.AjaxGridNavigation .end
+{
+    background-image: url('../../../Images/ico-resultset-last.png');
+}
+
+#AjaxGrid .uparrow
+{
+    background-image: url('images/ico_arrow_up.png');
+}
+
+#AjaxGrid .downarrow
+{
+    background-image: url('images/ico_arrow_down.png');
+}
+#AjaxGrid .editrecord
+{
+    background-image: url('images/ico-edit.png');
+}
+
+#AjaxGrid .deleteRow
+{
+    background-image: url('images/ico-data-delete.png');
+}
