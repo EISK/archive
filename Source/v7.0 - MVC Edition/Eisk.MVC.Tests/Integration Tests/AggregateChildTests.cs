@@ -60,6 +60,7 @@ namespace Eisk.Tests
        [TestMethod]
         public void InsertAggregateChildToAggregateRoot(){
 
+           //arrange
             DatabaseContext ctx = new DatabaseContext();
 
             Employee supervisorEmployee = ctx.EmployeeRepository.Find(1);
@@ -70,9 +71,10 @@ namespace Eisk.Tests
 
             ctx.SaveChanges();
 
-
+           //act
             int actualCount = (from e in ctx.EmployeeRepository select e).ToList().Count;
 
+           //assert 
             Assert.AreEqual(15, actualCount);
             Assert.AreEqual(11, supervisorEmployee.Subordinates.Count);
         }
