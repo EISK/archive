@@ -1,6 +1,0 @@
-﻿===========================
-ASP.NET Scafolding Customization
-Global Templates are Located in the following location:
-G:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\Microsoft\Web\Mvc\Scaffolding\Templates
-Local templates as places in the CodeTemplates directory will override the global template
-===========================
