@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Employee Info Starter Kit.27981211-e214-4cab-b69b-baefccdeab0c" Version="9.0.28" Language="en-US" Publisher="Ashraf Alam" />
+        <Identity Id="Employee Info Starter Kit.27981211-e214-4cab-b69b-baefccdeab0c" Version="9.0.29" Language="en-US" Publisher="Ashraf Alam" />
         <DisplayName>EISK.MVC</DisplayName>
         <Description xml:space="preserve">Employee Info Starter Kit is an open source ASP.NET project template that is highly influenced by the concept ‘Pareto Principle’ or 80-20 rule, where it is targeted to enable a web developer to gain 80% productivity with 20% of effort with respect to learning curve and production.</Description>
         <MoreInfo>https://github.com/EISK</MoreInfo>
