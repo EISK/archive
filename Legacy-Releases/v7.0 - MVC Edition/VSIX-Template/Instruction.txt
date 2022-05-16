@@ -1,0 +1,21 @@
+==========================================================
+Template creation steps
+==========================================================
+Step 1:
+Update the content in App-Src
+	Copy latest source to this folder
+	Update MyTemplate.vstemplate
+
+Step 2:
+Zip the content of App-Src (without the root folder) and name it to: Eisk.MVC.Zip
+
+Step 3: 
+Copy the Eisk.MVC.zip to Template-Src\Eisk.MVC\CSharp\Web\1033
+
+Step 4:
+Zip the content of Template-Src (without the root folder) and update the extension to vsix
+
+Step 5: 
+Copy the vsix to Binary folder
+
+==========================================================
