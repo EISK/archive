@@ -22,7 +22,7 @@ namespace Eisk.MVC.Global
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             
-            //DataInitializer.Init();//disable data initializer for now
+            DataInitializer.Init();
             DisplayModelInitializer.Init();
             DependencyInjectorInitializer.Init();
             
