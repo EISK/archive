@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Employee Info Starter Kit.27981211-e214-4cab-b69b-baefccdeab0c" Version="9.0.29" Language="en-US" Publisher="Ashraf Alam" />
+        <Identity Id="Employee Info Starter Kit.27981211-e214-4cab-b69b-baefccdeab0c" Version="9.0.30" Language="en-US" Publisher="Ashraf Alam" />
         <DisplayName>EISK.MVC</DisplayName>
-        <Description xml:space="preserve">Employee Info Starter Kit is an open source ASP.NET project template that is highly influenced by the concept ‘Pareto Principle’ or 80-20 rule, where it is targeted to enable a web developer to gain 80% productivity with 20% of effort with respect to learning curve and production.</Description>
+        <Description xml:space="preserve">EISK is an open source ASP.NET project template that is highly influenced by the concept ‘Pareto Principle’ or 80-20 rule, where it is targeted to enable a web developer to gain 80% productivity with 20% of effort with respect to learning curve.</Description>
         <MoreInfo>https://github.com/EISK</MoreInfo>
         <License>license.txt</License>
         <GettingStartedGuide>https://github.com/EISK</GettingStartedGuide>
@@ -12,11 +12,8 @@
         <PreviewImage>VSIXProject_small.png</PreviewImage>
     </Metadata>
     <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.VWDExpress" Version="[12.0, 16.0)">
+        <InstallationTarget Id="Microsoft.VisualStudio.VWDExpress" Version="[12.0)">
             <ProductArchitecture>x86</ProductArchitecture>
-        </InstallationTarget>
-        <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Community">
-            <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
     </Installation>
     <Dependencies>
