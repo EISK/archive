@@ -22,7 +22,7 @@ namespace Eisk.MVC.Global
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             
-            //DataInitializer.Init();// enable this if you have SQL Server compact edition installed
+            DataInitializer.Init();
             DisplayModelInitializer.Init();
             DependencyInjectorInitializer.Init();
             
