@@ -26,6 +26,8 @@
 * Delete existing employee records
 * Role based security model
 
+**Live Demo**
+* [Live Demo](http://eiskmvc.apphb.com/)
 
 **Getting Started**
 * Download and install latest EISK MVC from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AshrafulAlam.EmployeeInfoStarterKitEISK-MVC).
