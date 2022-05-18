@@ -31,7 +31,7 @@
 
 **Getting Started**
 * Download and install latest EISK MVC from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AshrafulAlam.EmployeeInfoStarterKitEISK-MVC).
-* Once installed enjoy creating EISK projects by going File –> New Project –> Installed –> Templates –> Visual C# –> Web –> Eisk.MVC. Select a location.
+* Once installed, open Visual Studio and  enjoy creating EISK projects by going File –> New Project. Search for template with the keyword "Eisk.MVC". Select the template, followed by select a location to allow Visual Studio creating new project.
 * Once the project is loaded in the visual studio, hit F5 to start the project.
 
 Checkout EISK's [GitHub]( https://github.com/eisk) url for more frequent updates.
